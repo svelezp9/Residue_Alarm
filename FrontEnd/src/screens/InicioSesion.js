@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { StyleSheet, View, Image, TouchableOpacity, Text } from "react-native";
 import CrearCuenta from "../components/CrearCuenta";
 
-function InicioScreen(props) {
+function InicioSesion(props) {
   return (
     <View style={styles.container}>
       <View style={styles.headerPhoneRow}>
@@ -112,4 +112,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default InicioScreen;
+export default InicioSesion;

@@ -1,115 +1,92 @@
 import React, { Component } from "react";
-import styled, { css } from "styled-components";
+import { StyleSheet, View, Image, TouchableOpacity } from "react-native";
 
 function ReportScreen(props) {
   return (
-    <>
-      <LogoStack>
-        <Logo
-          src={require("../assets/images/Screen_Shot_2022-03-18_at_2.09.45_PM2.png")}
-        ></Logo>
-        <Camara></Camara>
-        <Header></Header>
-      </LogoStack>
-      <TomarFotoRow>
-        <TomarFoto>
-          <ButtonOverlay></ButtonOverlay>
-        </TomarFoto>
-        <RepetirFoto>
-          <ButtonOverlay></ButtonOverlay>
-        </RepetirFoto>
-      </TomarFotoRow>
-      <EnviarFoto>
-        <ButtonOverlay></ButtonOverlay>
-      </EnviarFoto>
-      <Historial>
-        <ButtonOverlay></ButtonOverlay>
-      </Historial>
-    </>
+    <View style={styles.container}>
+      <View style={styles.logoStack}>
+        <Image
+          source={require("../assets/images/Screen_Shot_2022-03-18_at_2.09.45_PM2.png")}
+          resizeMode="contain"
+          style={styles.logo}
+        ></Image>
+        <View style={styles.camara}></View>
+        <View style={styles.header}></View>
+      </View>
+      <View style={styles.tomarFotoRow}>
+        <TouchableOpacity style={styles.tomarFoto}></TouchableOpacity>
+        <TouchableOpacity style={styles.repetirFoto}></TouchableOpacity>
+      </View>
+      <TouchableOpacity style={styles.enviarFoto}></TouchableOpacity>
+      <TouchableOpacity style={styles.historial}></TouchableOpacity>
+    </View>
   );
 }
 
-const Logo = styled.img`
-  top: 50px;
-  width: 254px;
-  height: 230px;
-  position: absolute;
-  left: 61px;
-  object-fit: contain;
-`;
-
-const ButtonOverlay = styled.button`
- display: block;
- background: none;
- height: 100%;
- width: 100%;
- border:none
- `;
-const Camara = styled.div`
-  top: 241px;
-  left: 47px;
-  width: 281px;
-  height: 256px;
-  position: absolute;
-  background-color: #E6E6E6;
-`;
-
-const Header = styled.div`
-  top: 0px;
-  left: 0px;
-  width: 392px;
-  height: 90px;
-  position: absolute;
-  background-color: rgba(204,204,36,1);
-`;
-
-const LogoStack = styled.div`
-  width: 392px;
-  height: 498px;
-  margin-top: -34px;
-  position: relative;
-`;
-
-const TomarFoto = styled.div`
-  width: 122px;
-  height: 92px;
-  background-color: #E6E6E6;
-  border: none;
-`;
-
-const RepetirFoto = styled.div`
-  width: 122px;
-  height: 92px;
-  background-color: #E6E6E6;
-  margin-left: 37px;
-  border: none;
-`;
-
-const TomarFotoRow = styled.div`
-  height: 92px;
-  flex-direction: row;
-  display: flex;
-  margin-top: 39px;
-  margin-left: 47px;
-  margin-right: 47px;
-`;
-
-const EnviarFoto = styled.div`
-  width: 281px;
-  height: 65px;
-  background-color: #E6E6E6;
-  margin-top: 22px;
-  margin-left: 47px;
-  border: none;
-`;
-
-const Historial = styled.div`
-  width: 281px;
-  height: 69px;
-  background-color: #E6E6E6;
-  margin-top: 20px;
-  margin-left: 47px;
-  border: none;
-`;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  },
+  logo: {
+    top: 50,
+    width: 254,
+    height: 230,
+    position: "absolute",
+    left: 61
+  },
+  camara: {
+    top: 241,
+    left: 47,
+    width: 281,
+    height: 256,
+    position: "absolute",
+    backgroundColor: "#E6E6E6"
+  },
+  header: {
+    top: 0,
+    left: 0,
+    width: 392,
+    height: 90,
+    position: "absolute",
+    backgroundColor: "rgba(204,204,36,1)"
+  },
+  logoStack: {
+    width: 392,
+    height: 498,
+    marginTop: -34
+  },
+  tomarFoto: {
+    width: 122,
+    height: 92,
+    backgroundColor: "#E6E6E6"
+  },
+  repetirFoto: {
+    width: 122,
+    height: 92,
+    backgroundColor: "#E6E6E6",
+    marginLeft: 37
+  },
+  tomarFotoRow: {
+    height: 92,
+    flexDirection: "row",
+    marginTop: 39,
+    marginLeft: 47,
+    marginRight: 47
+  },
+  enviarFoto: {
+    width: 281,
+    height: 65,
+    backgroundColor: "#E6E6E6",
+    marginTop: 22,
+    marginLeft: 47
+  },
+  historial: {
+    width: 281,
+    height: 69,
+    backgroundColor: "#E6E6E6",
+    marginTop: 20,
+    marginLeft: 47
+  }
+});
 
 export default ReportScreen;
