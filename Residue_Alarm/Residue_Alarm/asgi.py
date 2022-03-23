@@ -1,5 +1,5 @@
 """
-ASGI config for Residue_alarm project.
+ASGI config for Residue_Alarm project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
