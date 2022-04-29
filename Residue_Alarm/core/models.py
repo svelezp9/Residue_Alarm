@@ -1,3 +1,4 @@
+from datetime import datetime
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser , BaseUserManager , PermissionsMixin
 from django.conf import settings
@@ -43,6 +44,7 @@ class Residue(models.Model):
         on_delete=models.CASCADE,  
     )
     priority = models.IntegerField()
+    date = models.DateField(auto_now_add=True,null=True)
     status = models.CharField(max_length=255)
     lat = models.CharField(max_length=255,default=0)
     lon = models.CharField(max_length=255,default=0)
